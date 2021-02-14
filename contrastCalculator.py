@@ -83,13 +83,13 @@ if __name__ == "__main__":
     def increment(index):
         hexBit = hex(min(((int(entries[index].get(), 16))+1), 255))
         entries[index].delete('0', 'end')
-        entries[index].insert('insert', hexBit[2:])
+        entries[index].insert('insert', hexBit[2:].zfill(2))
         calculate()
     
     def decrement(index):
         hexBit = hex(max(((int(entries[index].get(), 16))-1), 0))
         entries[index].delete('0', 'end')
-        entries[index].insert('insert', hexBit[2:])
+        entries[index].insert('insert', hexBit[2:].zfill(2))
         calculate()
         
 
